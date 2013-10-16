@@ -1,0 +1,27 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="dk.evry.tesseract"
+      version="0.1.0">
+    <name>Tesseract</name>
+    <description>Sample PhoneGap Tesseract Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,tesseract</keywords>
+ 
+ 
+    <js-module src="www/tesseract.js" name="Tesseract">
+        <clobbers target="window.tesseract" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Tesseract">
+                <param name="android-package" value="dk.evry.tesseract.Tesseract"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/android/Tesseract.java" target-dir="src/dk/evry/tesseract" />      
+     </platform>          
+</plugin>
