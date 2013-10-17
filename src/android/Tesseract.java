@@ -18,11 +18,19 @@ public class Tesseract extends CordovaPlugin {
 		try {
 		    if (ACTION_ADD_TESSERACT_ENTRY.equals(action)) { 
 		             JSONObject arg_object = args.getJSONObject(0);
-		             Intent calIntent = new Intent(Intent.ACTION_EDIT)
-		        .setType("vnd.android.cursor.item/event");
-		 
-		       this.cordova.getActivity().startActivity(calIntent);
-		       callbackContext.success();
+		             //Intent calIntent = new Intent(Intent.ACTION_EDIT)
+		             //.setType("vnd.android.cursor.item/event")
+		             //.putExtra("beginTime", arg_object.getLong("startTimeMillis"));
+		             String sampleTest = arg_object.getString("sampleTest");
+		             this.SampleTest(sampleTest, callbackContext);
+		             
+		             //this.cordova.getActivity().startActivity(sampletest);
+		             
+		      
+		             
+		             
+		       //this.cordova.getActivity().startActivity(calIntent);
+		      // callbackContext.success();
 		       return true;
 		    }
 		    callbackContext.error("Invalid action");
@@ -32,6 +40,15 @@ public class Tesseract extends CordovaPlugin {
 		    callbackContext.error(e.getMessage());
 		    return false;
 		} 
+	}
+
+	private void SampleTest(String sampletest, CallbackContext callbackContext) {
+		 if (sampletest != null && sampletest.length() > 0) {
+	            callbackContext.success(sampletest);
+	        } else {
+	            callbackContext.error("Expected one non-empty string argument.");
+	        }
+		
 	}
 
 }

@@ -1,5 +1,5 @@
-var tesseract = {
-    createEvent: function(title, location, notes, startDate, endDate, successCallback, errorCallback) {
+cordova.define("dk.evry.tesseract.Tesseract", function(require, exports, module) {var tesseract = {
+    createEvent: function(startDate, successCallback, errorCallback) {
         cordova.exec(
             successCallback, // success callback function
             errorCallback, // error callback function
@@ -10,9 +10,11 @@ var tesseract = {
 				//"title": title,
                // "description": notes,
                // "eventLocation": location,
-               // "startTimeMillis": startDate.getTime(),
-               // "endTimeMillis": endDate.getTime()+            }]
+               "sampleTest": sampleTest,
+               // "endTimeMillis": endDate.getTime()+            
+               }]
         ); 
     }
 }
 module.exports = tesseract;
+});
