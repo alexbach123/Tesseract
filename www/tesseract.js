@@ -1,4 +1,4 @@
-var tesseract = {
+cordova.define("dk.evry.tesseract.Tesseract", function(require, exports, module) {var tesseract = {
     createEvent: function(sampleTest, successCallback, errorCallback) {
         cordova.exec(
             successCallback, // success callback function
@@ -12,4 +12,4 @@ var tesseract = {
         );
     }
 }
-module.exports = tesseract;
+module.exports = tesseract;});
